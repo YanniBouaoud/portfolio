@@ -1,0 +1,84 @@
+/* Apparition et disparition au défilement */
+section {
+    opacity: 0; /* Caché au départ */
+    transform: translateY(50px); /* Décalé vers le bas */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  section.active {
+    opacity: 1; /* Devient visible */
+    transform: translateY(0); /* Revient à la position normale */
+  }
+  
+  /* Apparence des titres et paragraphes */
+  section h2 {
+    font-size: 2.5rem;
+    color: #00c3ff; /* Couleur principale éclatante */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  section.active h2 {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  section p {
+    font-size: 1.2rem;
+    color: #d4d4d4; /* Gris clair pour une meilleure lisibilité */
+    line-height: 1.8;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  section.active p {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Liste des éléments */
+  section ul li {
+    font-size: 1.1rem;
+    color: #ffffff; /* Blanc pour le contraste */
+    background: linear-gradient(90deg, #00c3ff 0%, #1a73e8 100%);
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, background 0.5s;
+    transition-delay: calc(0.2s * var(--index)); /* Basé sur l'ordre */
+  }
+  
+  section.active ul li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  section ul li:hover {
+    background: linear-gradient(90deg, #1a73e8 0%, #00c3ff 100%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+  }
+  
+  /* Mise en page section */
+  section {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid #333; /* Ligne subtile entre sections */
+  }
+  
+  section:last-of-type {
+    border-bottom: none; /* Pas de ligne pour la dernière section */
+  }
+  
