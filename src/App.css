@@ -31,7 +31,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
-  background-color: #121212;
+  background-color: #fcfbfb00;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -264,4 +264,64 @@ section ul li {
 /* Optional: Circle hover effect on links */
 nav a:hover ~ .mouse-circle {
   border-color: #00c3ff; /* Change border color on hover */
+}
+
+/* Opening Animation */
+
+/* Animation de la ligne qui descend et s'élargit */
+.line {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 2px; /* Épaisseur de la ligne */
+  height: 0;
+  background-color: #121212; /* Couleur de la ligne */
+  transform: translateX(-50%);
+  animation: slideDown 3s ease-in-out forwards, expand 2s ease-in-out forwards 3s, fadeOut 0.5s ease-in-out forwards 5s;
+  z-index: 1000; /* Assurez-vous que la ligne est au-dessus du contenu */
+}
+
+@keyframes slideDown {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%; /* La ligne descend jusqu'à la taille de l'écran */
+  }
+}
+
+@keyframes expand {
+  0% {
+    width: 2px; /* Largeur initiale de la ligne */
+  }
+  100% {
+    width: 100%; /* La ligne s'élargit pour couvrir l'écran */
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0; /* Rend la ligne transparente après l'animation */
+    pointer-events: none; /* Désactive les interactions pour que le contenu soit cliquable */
+  }
+}
+
+/* Contenu principal masqué pendant la transition */
+.site-content.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out, visibility 0s 5s;
+}
+
+/* Affichage du contenu après la transition */
+.site-content {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* Transition fluide */
+  text-align: center;
+  padding: 20px;
+  z-index: 500; /* Assurez-vous que le contenu est sous la ligne */
 }

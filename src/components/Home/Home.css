@@ -1,7 +1,7 @@
 #home {
     padding: 50px;
     text-align: center;
-    background-color: #161616;
+    background-color: #ffffff00;
   }
   
   #home h1 {
@@ -114,7 +114,7 @@ header#home {
   align-items: flex-start; /* Alignement à gauche */
   text-align: left; /* Assurez-vous que le texte est aligné à gauche */
   padding: 0 20px;
-  background: linear-gradient(135deg, #121212, #1a1a1a);
+  background: linear-gradient(135deg, #ffffff00, #ffffff00);
   color: #f0f0f0;
   position: relative;
 }

@@ -3,56 +3,75 @@ import "./About.css";
 
 const About = () => {
   const aboutRef = useRef(null);
+  const cvRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("active"); // Ajoute la classe quand visible
+            entry.target.classList.add("active");
           } else {
-            entry.target.classList.remove("active"); // Retire la classe quand invisible
+            entry.target.classList.remove("active");
           }
         });
       },
-      {
-        threshold: 0.2, // Le déclenchement se produit lorsque 20% de l'élément sont visibles
-      }
+      { threshold: 0.2 }
     );
 
-    const section = aboutRef.current;
+    const aboutSection = aboutRef.current;
+    const cvSection = cvRef.current;
 
-    if (section) {
-      observer.observe(section);
-    }
+    if (aboutSection) observer.observe(aboutSection);
+    if (cvSection) observer.observe(cvSection);
 
-    // Cleanup
     return () => {
-      if (section) observer.unobserve(section);
+      if (aboutSection) observer.unobserve(aboutSection);
+      if (cvSection) observer.unobserve(cvSection);
     };
   }, []);
 
   return (
-    <section ref={aboutRef} className="about">
-      <h2>À propos de moi</h2>
-      <p>
-        Passionné par le développement, je suis titulaire d’un Bac+4 en
-        conception et développement d’applications, avec expérience en React,
-        Java, et SQL.
-      </p>
-      <ul>
-        <li style={{ "--index": 1 }}>Frontend : React.js, Material UI, TypeScript</li>
-        <li style={{ "--index": 2 }}>Backend : Java, Spring Boot</li>
-        <li style={{ "--index": 3 }}>Bases de données : MySQL, MongoDB</li>
-      </ul>
+    <>
+      <section ref={aboutRef} className="about">
+        <h2>À propos de moi</h2>
+        <p>
+          Passionné par le développement, je suis titulaire d’un Bac+4 en
+          conception et développement d’applications, avec expérience en React,
+          Java, et SQL.
+        </p>
+        <ul>
+          <li style={{ "--index": 1 }}>Frontend : React.js, Material UI, TypeScript</li>
+          <li style={{ "--index": 2 }}>Backend : Java, Spring Boot</li>
+          <li style={{ "--index": 3 }}>Bases de données : MySQL, MongoDB</li>
+        </ul>
+      </section>
 
-      <h2>Mon CV</h2>
-  <p>Vous pouvez télécharger ou visualiser mon CV ici.</p>
-  <a href="cv_Yanni_Bouaoud.pdf" target="_blank" class="cv-button">
-    Télécharger mon CV
-  </a>
-    </section>
-    
+      <section ref={cvRef} className="cv">
+        <h3>Mon CV</h3>
+        <div className="cv-content">
+          <p>
+            Découvrez mon parcours et mes compétences en détail dans mon CV :
+          </p>
+          <div className="cv-actions">
+            <a
+              href="cv_Yanni_Bouaoud.pdf"
+              target="_blank"
+              className="cv-button view"
+            >
+              📄 Visualiser le CV
+            </a>
+            <a
+              href="cv_Yanni_Bouaoud.pdf"
+              download
+              className="cv-button download"
+            >
+              ⬇️ Télécharger le CV
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

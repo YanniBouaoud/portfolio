@@ -3,62 +3,67 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
+import { FaGithub, FaLinkedin } from "react-icons/fa"; // Assurez-vous que cet import est présent
 
 import "./App.css";
 
 function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isTransitioning, setIsTransitioning] = useState(true);
 
   useEffect(() => {
-    const handleMouseMove = (event) => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-    };
+    const timer = setTimeout(() => {
+      setIsTransitioning(false);
+    }, 5000); // Durée totale de l'animation en secondes
 
-    window.addEventListener("mousemove", handleMouseMove);
-
-    // Cleanup the event listener on unmount
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div>
-      {/* Circle */}
-      <div
-        className="mouse-circle"
-        style={{
-          left: `${mousePosition.x}px`,
-          top: `${mousePosition.y}px`,
-        }}
-      ></div>
+    <div className="app">
+      {/* Animation de la ligne */}
+      {isTransitioning && (
+        <div className="line"></div>
+      )}
 
-      {/* Navigation */}
-      <nav>
-        <a href="#home">Accueil</a>
-        <a href="#about">À Propos</a>
-        <a href="#projects">Projets</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      {/* Main Site Content */}
+      <div className={`site-content ${isTransitioning ? "hidden" : ""}`}>
+        {/* Navigation */}
+        <nav>
 
-      {/* Sections */}
-      <div id="home">
-        <Home />
-      </div>
-      <div id="about">
-        <About />
-      </div>
-      <div id="projects">
-        <Projects />
-      </div>
-      <div id="contact">
-        <Contact />
-      </div>
+             {/* Icônes de réseaux sociaux */}
+             <a href="https://github.com/YanniBouaoud" target="_blank" rel="noopener noreferrer">
+            <FaGithub size={30} style={{ marginLeft: "15px", color: "#ffffff" }} />
+          </a>
+          <a href="https://www.linkedin.com/in/yannilille/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={30} style={{ marginLeft: "15px", color: "#ffffff" }} />
+          </a>
+          <a href="#home">Home</a>
+          <a href="#about">À Propos</a>
+          <a href="#projects">Projets</a>
+          <a href="#contact">Contact</a>
+           
+        </nav>
 
-      {/* Footer */}
-      <footer>
-        <p>© 2024 Yanni Bouaoud - Tous droits réservés</p>
-      </footer>
+
+        {/* Sections */}
+        <div id="home">
+          <Home />
+        </div>
+        <div id="about">
+          <About />
+        </div>
+        <div id="projects">
+          <Projects />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
+
+        {/* Footer */}
+        <footer>
+          <p>© 2024 Yanni Bouaoud - Tous droits réservés</p>
+        </footer>
+      </div>
     </div>
   );
 }
