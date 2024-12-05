@@ -13,12 +13,42 @@ const Projects = () => {
       description: "Création de comptes clients et gestion des commandes.",
       link: "https://github.com/YanniBouaoud",
     },
-    // Ajoute d'autres projets ici.
+    // Ajoutez d'autres projets ici.
   ];
 
   return (
     <div className="projects">
       <h2>Mes Projets</h2>
+
+      {/* Frise chronologique */}
+      <div className="timeline">
+        <div className="timeline-step">
+          <span className="step-icon">🖌️</span>
+          <p>Conception</p>
+        </div>
+        <div className="timeline-arrow">→</div>
+        <div className="timeline-step">
+          <span className="step-icon">💻</span>
+          <p>Développement</p>
+        </div>
+        <div className="timeline-arrow">→</div>
+        <div className="timeline-step">
+          <span className="step-icon">🧪</span>
+          <p>Tests</p>
+        </div>
+        <div className="timeline-arrow">→</div>
+        <div className="timeline-step">
+          <span className="step-icon">🔗</span>
+          <p>Intégration</p>
+        </div>
+        <div className="timeline-arrow">→</div>
+        <div className="timeline-step">
+          <span className="step-icon">🚀</span>
+          <p>Déploiement Continu</p>
+        </div>
+      </div>
+
+      {/* Liste des projets */}
       <div className="project-list">
         {projects.map((project, index) => (
           <div key={index} className="project-card">
