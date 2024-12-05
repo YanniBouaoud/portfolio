@@ -7,12 +7,13 @@ const Home = () => (
   <h1>FULL STACK    
   DEVELOPPER</h1>
   <div className="about">
-    <p>
-      Hey! My name is Yanni, I am an application designer and developer with a bac+4 diploma. 
-      Passionate about web development, I spend my time outside of class working on web projects and exploring new technologies.
+  <p style={{ fontSize: '20px', marginBottom: '15px' }}>
+  Hello! My name is Yanni, and I am an application designer and developer with a Bac+4 degree. Passionate about development, I spend my time working on web projects, exploring new technologies, and improving my skills.
+
+My portfolio? Here is an overview of my journey in web development.
     </p>
-    <p>
-      My portfolio? This is a snapshot of my journey in web development.
+    <p style={{ fontSize: '20px', marginBottom: '10px' }}>
+    My portfolio? This is a snapshot of my journey in web development.
     </p>
   </div>
 </header>

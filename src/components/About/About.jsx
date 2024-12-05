@@ -34,16 +34,23 @@ const About = () => {
   return (
     <>
       <section ref={aboutRef} className="about">
-        <h2>À propos de moi</h2>
-        <p>
-          Passionné par le développement, je suis titulaire d’un Bac+4 en
-          conception et développement d’applications, avec expérience en React,
-          Java, et SQL.
+        <h2>About me</h2>
+        <p style={{ fontSize: "19px", marginBottom: "25px" }}>
+          Passionate about development, I design and develop applications, with
+          experience in React, Java and SQL. Learning new tech is key for me. As
+          a web dev enthusiast, I'm always adapting to stay on the cutting edge
+          of innovation.
         </p>
         <ul>
-          <li style={{ "--index": 1 }}>Frontend : React.js, Material UI, TypeScript</li>
-          <li style={{ "--index": 2 }}>Backend : Java, Spring Boot</li>
-          <li style={{ "--index": 3 }}>Bases de données : MySQL, MongoDB</li>
+          <li style={{ "--index": 1 }}>
+            Frontend : &nbsp;React js, native, npm, npx, html, css, material ui,
+            typescript, javascript
+          </li>
+          <li style={{ "--index": 2 }}>
+            Backend : &nbsp;Java 17, Spring, hibernate, checkstyle, JUnit,
+            Spotbug, API REST
+          </li>
+          <li style={{ "--index": 3 }}>Databases :&nbsp; MySQL, MongoDB</li>
         </ul>
       </section>
 

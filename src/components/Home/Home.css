@@ -150,14 +150,14 @@ header#home .btn:hover {
 
 
 header#home .about {
-  max-width: 400px; /* Limite la largeur pour un aspect propre */
+  max-width: 600px; /* Limite la largeur pour un aspect propre */
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.05); /* Couleur de fond subtile */
   border-left: 4px solid #00c3ff; /* Bordure gauche pour accentuer */
   margin-top: 20px;
-  font-size: 1rem;
+  font-size: 20px;
   color: #e0e0e0;
-  line-height: 1.6;
+  line-height: 1.5;
   align-self: flex-end; /* Aligne le texte à droite */
   text-align: left; /* Garde le texte aligné à gauche dans son conteneur */
 }
@@ -168,3 +168,10 @@ header#home h1 {
   line-height: 1.2; /* Ajuste l'espacement entre les lignes */
   color: #00c3ff;
 }
+
+.about {
+ 
+  font-size: 2000px;
+ 
+}
+
