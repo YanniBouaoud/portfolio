@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -118,7 +118,9 @@ section.active {
   transform: translateY(0);
 }
 
-.about, .projects, .contact {
+.about,
+.projects,
+.contact {
   margin-top: 50px;
   text-align: center;
 }
@@ -208,7 +210,7 @@ section p {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #121212;
+  background-color: #fcfbfb00;
   color: #e4e4e4;
   font-size: 0.9rem;
 }
@@ -245,8 +247,6 @@ section ul li {
   transition-delay: calc(0.2s * var(--index)); /* Basé sur l'ordre */
 }
 
-
-
 /* Circle that follows the mouse */
 .mouse-circle {
   position: fixed;
@@ -277,7 +277,8 @@ nav a:hover ~ .mouse-circle {
   height: 0;
   background-color: #121212; /* Couleur de la ligne */
   transform: translateX(-50%);
-  animation: slideDown 3s ease-in-out forwards, expand 2s ease-in-out forwards 3s, fadeOut 0.5s ease-in-out forwards 5s;
+  animation: slideDown 3s ease-in-out forwards,
+    expand 2s ease-in-out forwards 3s, fadeOut 0.5s ease-in-out forwards 5s;
   z-index: 1000; /* Assurez-vous que la ligne est au-dessus du contenu */
 }
 

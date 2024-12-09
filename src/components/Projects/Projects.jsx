@@ -4,7 +4,7 @@ import "./Projects.css";
 const Projects = () => {
   const projects = [
     {
-      title: "Gestion de données Pokémon",
+      title: "Suiss French Group",
       description: "Application web pour gérer les entités Pokémon.",
       link: "https://github.com/YanniBouaoud",
       imageSrc: "/SFG-iphone1.png", // Chemin relatif à partir de la racine
@@ -99,20 +99,23 @@ const Projects = () => {
       {/* Liste des projets */}
       <div className="project-list">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="project-card"
-            onMouseEnter={() => setHoveredProject(index)}
-            onMouseLeave={() => setHoveredProject(null)}
-          >
-            <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              Voir sur GitHub
-            </a>
-            {/* Affichage de l'image lorsque la souris est sur la carte */}
+          <React.Fragment key={index}>
+            {/* Carte du projet */}
+            <div
+              className="project-card"
+              onMouseEnter={() => setHoveredProject(index)}
+              onMouseLeave={() => setHoveredProject(null)}
+            >
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                Source code
+              </a>
+            </div>
+
+            {/* Image du projet en dehors de la carte */}
             {hoveredProject === index && (
-              <div className="project-image-overlay">
+              <div className="project-image-outside">
                 <img
                   src={project.imageSrc}
                   alt={`Aperçu du projet ${project.title}`}
@@ -120,7 +123,7 @@ const Projects = () => {
                 />
               </div>
             )}
-          </div>
+          </React.Fragment>
         ))}
       </div>
     </div>
