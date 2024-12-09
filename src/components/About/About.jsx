@@ -55,25 +55,23 @@ const About = () => {
       </section>
 
       <section ref={cvRef} className="cv">
-        <h3>Mon CV</h3>
+        <h3>My resume</h3>
         <div className="cv-content">
-          <p>
-            Découvrez mon parcours et mes compétences en détail dans mon CV :
-          </p>
+          <p>Discover my background and my skills in detail in my resume : </p>
           <div className="cv-actions">
             <a
               href="cv_Yanni_Bouaoud.pdf"
               target="_blank"
               className="cv-button view"
             >
-              📄 Visualiser le CV
+              📄 Check out my resume
             </a>
             <a
               href="cv_Yanni_Bouaoud.pdf"
               download
               className="cv-button download"
             >
-              ⬇️ Télécharger le CV
+              ⬇️ Downloadmy resume
             </a>
           </div>
         </div>

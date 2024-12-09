@@ -4,6 +4,8 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import { FaGithub, FaLinkedin } from "react-icons/fa"; // Assurez-vous que cet import est présent
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
 
 import "./App.css";
 
@@ -61,8 +63,17 @@ function App() {
 
         {/* Footer */}
         <footer>
-          <p>© 2024 Yanni Bouaoud - Tous droits réservés</p>
-        </footer>
+<div className="social-links">
+        
+            <a
+              
+          href="https://github.com/YanniBouaoud/portfolio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faCode} size="2x" />
+        </a>
+      </div>        </footer>
       </div>
     </div>
   );

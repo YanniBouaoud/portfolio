@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { AiOutlineGithub } from "react-icons/ai"; // Importer une icône de GitHub depuis React Icons
+
 import "./Projects.css";
 
 const Projects = () => {
@@ -7,36 +9,38 @@ const Projects = () => {
       title: "Suiss French Group",
       description: "Application web pour gérer les entités Pokémon.",
       link: "https://github.com/YanniBouaoud",
-      imageSrc: "/SFG-iphone1.png", // Chemin relatif à partir de la racine
+      imageSrc: "/SFG-iphone1.png", // Image à gauche
+      rightImageSrc: "/SFG-iphone2.png", // Image à droite
     },
     {
-      title: "Plateforme de commandes de pizza",
-      description: "Création de comptes clients et gestion des commandes.",
+      title: "NFS Location",
+      description: "Page gestion location de véhicules",
       link: "https://github.com/YanniBouaoud",
-      imageSrc: "/images/pizza.png", // Capture d'écran du projet
+      imageSrc: "/NfsLocation1.png", // Image à gauche
+      rightImageSrc: "/NfsLocation2.png", // Image à droite
     },
   ];
 
   const timelineSteps = [
     {
       icon: "🖌️",
-      label: "Conception",
+      label: "Design",
       tools: "Maquettage, UML, Wireframes/Wireflow",
     },
     {
       icon: "💻",
-      label: "Développement",
+      label: "Development",
       tools: "React, Node.js, Spring Boot, Java 17",
     },
     {
       icon: "🧪",
-      label: "Tests",
+      label: "Testing",
       tools: "JUnit, Test fonctionnels, Checkstyle",
     },
-    { icon: "🔗", label: "Intégration", tools: "GitHub" },
+    { icon: "🔗", label: "Integration", tools: "GitHub" },
     {
       icon: "🚀",
-      label: "Déploiement Continu",
+      label: "Continuous Deployment",
       tools: "Firebase, Docker",
     },
   ];
@@ -108,17 +112,34 @@ const Projects = () => {
             >
               <h3>{project.title}</h3>
               <p>{project.description}</p>
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                Source code
-              </a>
+              <div className="source-code-link">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <AiOutlineGithub size={24} /> {/* Icône GitHub */}
+                  <span className="source-code-text"></span> {/* Annotation */}
+                </a>
+              </div>
             </div>
-
-            {/* Image du projet en dehors de la carte */}
+            {/* Image du projet à gauche */}
             {hoveredProject === index && (
-              <div className="project-image-outside">
+              <div className="project-image-outside left">
                 <img
                   src={project.imageSrc}
-                  alt={`Aperçu du projet ${project.title}`}
+                  alt={`Aperçu du projet ${project.title} - gauche`}
+                  className="project-screenshot"
+                />
+              </div>
+            )}
+
+            {/* Image différente à droite */}
+            {hoveredProject === index && (
+              <div className="project-image-outside right">
+                <img
+                  src={project.rightImageSrc}
+                  alt={`Aperçu différent du projet ${project.title} - droite`}
                   className="project-screenshot"
                 />
               </div>

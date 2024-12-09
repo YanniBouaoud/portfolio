@@ -110,81 +110,7 @@
 }
 
 /* Project list styles */
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  position: relative;
-}
-
-.project-card {
-  position: relative;
-  width: 300px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  overflow: hidden; /* Empêche les débordements internes */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Image overlay */
-.project-image-overlay {
-  position: absolute;
-  top: -150px; /* Position en dehors de la carte */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: auto;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 10;
-}
-
-.project-image-overlay img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover .project-image-overlay {
-  opacity: 1;
-  transform: translateX(-50%) translateY(20px); /* Anime l'apparition */
-}
-
-/* Title and description */
-.project-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: #444;
-}
-
-.project-card p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #666;
-}
-
-.project-card a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.project-card:hover a {
-  text-decoration: underline;
-}
-
-/* Conteneur des projets */
+/* Conteneur de la liste de projets */
 .project-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -211,46 +137,63 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Image associée en dehors de la carte */
+/* Images associées en dehors de la carte */
 .project-image-outside {
   position: absolute;
-  top: 50%; /* Centrer l'image verticalement */
-  left: -250px; /* Placer l'image à gauche de la carte */
-  transform: translateY(-50%); /* Ajuster l'alignement vertical */
-  width: 200px;
-  z-index: 10;
+  top: 50%; /* Centrer verticalement */
+  transform: translateY(-50%);
   opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 10;
 }
 
+/* Animation pour l'image à gauche */
+.project-image-outside.left {
+  left: -400px; /* Positionner à gauche de la carte */
+  width: 340px; /* Taille de l'image */
+}
+
+.project-card:hover ~ .project-image-outside.left {
+  animation: slideInLeft 0.5s forwards; /* Animation de glissement */
+}
+
+/* Animation pour l'image à droite */
+.project-image-outside.right {
+  right: -400px; /* Positionner à droite de la carte */
+  width: 340px; /* Taille de l'image */
+}
+
+.project-card:hover ~ .project-image-outside.right {
+  animation: slideInRight 0.5s forwards; /* Animation de glissement */
+}
+
+/* Animation keyframes */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* Style de l'image */
 .project-image-outside img {
-  width: 100%;
+  width: 100%; /* Adapter à la largeur du conteneur */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-}
-
-/* Apparition de l'image lors du survol de la carte */
-.project-card:hover + .project-image-outside {
-  opacity: 1;
-  transform: translateY(-50%) translateX(0); /* Animation fluide vers la gauche */
-}
-
-/* Carte du projet */
-.project-card {
-  position: relative;
-  width: 300px;
-  padding: 15px;
-  background: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
