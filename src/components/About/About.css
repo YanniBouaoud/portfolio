@@ -1,94 +1,97 @@
 /* Apparition et disparition au défilement */
 section {
-    opacity: 0; /* Caché au départ */
-    transform: translateY(50px); /* Décalé vers le bas */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
-  section.active {
-    opacity: 1; /* Devient visible */
-    transform: translateY(0); /* Revient à la position normale */
-  }
-  
-  /* Apparence des titres et paragraphes */
-  section h2 {
-    font-size: 2.5rem;
-    color: #00c3ff; /* Couleur principale éclatante */
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
-  section.active h2 {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  section p {
-    font-size: 1.2rem;
-    color: #d4d4d4; /* Gris clair pour une meilleure lisibilité */
-    line-height: 1.8;
-    margin-bottom: 15px;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-  
-  section.active p {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* Liste des éléments */
-  section ul li {
-    font-size: 1.1rem;
-    color: #ffffff; /* Blanc pour le contraste */
-    background: linear-gradient(90deg, #00c3ff 0%, #1a73e8 100%);
-    padding: 10px 20px;
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out, background 0.5s;
-    transition-delay: calc(0.2s * var(--index)); /* Basé sur l'ordre */
-  }
-  
-  section.active ul li {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  section ul li:hover {
-    background: linear-gradient(90deg, #1a73e8 0%, #00c3ff 100%);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    transform: translateY(-5px);
-  }
-  
-  /* Mise en page section */
-  section {
-    padding: 80px 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    border-bottom: 1px solid #333; /* Ligne subtile entre sections */
-  }
-  
-  section:last-of-type {
-    border-bottom: none; /* Pas de ligne pour la dernière section */
-  }
-  /* Suppression des points de liste */
+  opacity: 0; /* Caché au départ */
+  transform: translateY(50px); /* Décalé vers le bas */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.active {
+  opacity: 1; /* Devient visible */
+  transform: translateY(0); /* Revient à la position normale */
+}
+
+/* Apparence des titres et paragraphes */
+section h2,
+section h3 {
+  font-size: 2.5rem;
+  color: #00c3ff; /* Couleur principale éclatante */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.active h2,
+section.active h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section p {
+  font-size: 1.2rem;
+  color: #d4d4d4; /* Gris clair pour une meilleure lisibilité */
+  line-height: 1.8;
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.active p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Liste des éléments */
+section ul li {
+  font-size: 1.1rem;
+  color: #ffffff; /* Blanc pour le contraste */
+  background: linear-gradient(90deg, #00c3ff 0%, #1a73e8 100%);
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, background 0.5s;
+  transition-delay: calc(0.2s * var(--index)); /* Basé sur l'ordre */
+}
+
+section.active ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section ul li:hover {
+  background: linear-gradient(90deg, #1a73e8 0%, #00c3ff 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+}
+
+/* Mise en page section */
+section {
+  padding: 80px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 1px solid #333; /* Ligne subtile entre sections */
+}
+
+section:last-of-type {
+  border-bottom: none; /* Pas de ligne pour la dernière section */
+}
+
+/* Suppression des points de liste */
 section ul {
   list-style-type: none; /* Enlève les points */
   padding: 0; /* Supprime le padding par défaut */
   margin: 0; /* Supprime les marges par défaut */
 }
 
-  /* Conteneur du CV */
+/* Conteneur du CV */
 .cv-container {
   margin: 30px auto;
   text-align: center;
@@ -140,69 +143,105 @@ section ul {
   transform: scale(1.05);
 }
 
-
-
-/* Apparence des titres h3 */
-section h3 {
-  font-size: 1.5rem; /* Plus petit que h2 */
-  color: #00c3ff; /* Même couleur éclatante que h2 */
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 3px;
-  margin-top: 2rem;
-
+/* Tools Section Styling */
+section ul li.tools {
+  font-size: 1.1rem;
+  color: #ffffff; /* Blanc pour le contraste */
+  background: linear-gradient(
+    90deg,
+    #ff8c00 0%,
+    #ff6f00 100%
+  ); /* Nouveau dégradé */
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, background 0.5s;
+  transition-delay: calc(0.2s * var(--index)); /* Basé sur l'ordre */
 }
 
-section.active h3 {
+section.active ul li.tools {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Boutons du CV */
-.cv-actions {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+section ul li.tools:hover {
+  background: linear-gradient(90deg, #ff6f00 0%, #ff8c00 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
 }
 
-.cv-button {
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px 20px;
-  font-size: 0.9rem;
+/* Specific Styles for Tools Subsection */
+.tools-list {
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+}
+
+.tools-list ul {
+  padding-left: 20px;
+}
+
+.tools-list ul li {
+  font-size: 1rem;
+  color: #333; /* Gris clair pour un bon contraste */
+  margin: 8px 0;
+}
+
+.tools-list ul li span {
+  color: #1d1c1c; /* Accent color */
   font-weight: bold;
-  text-transform: uppercase;
+}
+/* Tools Section Styling */
+/* Tools Section Styling */
+/* Tools Section Styling */
+section ul li.tools {
+  font-size: 1.1rem;
+  color: #ffffff; /* Blanc pour le contraste */
+  padding: 10px 20px;
+  margin: 10px 0;
   border-radius: 5px;
-  transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, background 0.5s;
+  transition-delay: calc(0.2s * var(--index)); /* Basé sur l'ordre */
 }
 
-.cv-button.view {
-  background: linear-gradient(90deg, #00c3ff, #1a73e8);
-  color: #fff;
+/* Style de la barre principale dans la section Tools */
+section.active ul li.tools {
+  opacity: 1;
+  transform: translateY(0);
+  background: linear-gradient(
+    90deg,
+    #f7d3ca 0%,
+    #e78069 100%
+  ); /* Dégradé initial, à ajuster selon ton besoin */
+  transition: background 0.5s ease, transform 0.3s ease; /* Transition douce pour le fond et la transformation */
 }
 
-.cv-button.view:hover {
-  background: linear-gradient(90deg, #1a73e8, #00c3ff);
-  transform: scale(1.05);
+/* Effet au survol de la barre */
+section ul li.tools:hover {
+  background: linear-gradient(
+    90deg,
+    #e78069 0%,
+    #ff3300 100%
+  ); /* Nouveau dégradé au survol, à ajuster selon ton besoin */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  transition: background 0.5s ease, transform 0.3s ease; /* Transition douce pour le changement de fond et la transformation */
 }
 
-.cv-button.download {
-  background: #333;
-  color: #00c3ff;
-  border: 2px solid #00c3ff;
+/* Supprimer le fond bleu des sous-listes (IDE, CI/CD, Conception) */
+.tools-list ul li {
+  background: none; /* Supprimer le fond bleu */
+  color: #ffffff; /* Gris clair pour un bon contraste */
+  margin: 8px 0;
 }
 
-.cv-button.download:hover {
-  background: #00c3ff;
-  color: #fff;
-  transform: scale(1.05);
+.tools-list ul li span {
+  font-weight: bold;
+  color: #ffffff; /* Accent color */
 }
-
-
-

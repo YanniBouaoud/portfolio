@@ -73,7 +73,7 @@ const Projects = () => {
 
   return (
     <div className="projects">
-      <h2>Mes Projets</h2>
+      <h2>HOW DO I WORK ON MY PROJECTS ?</h2>
 
       {/* Frise chronologique */}
       <div

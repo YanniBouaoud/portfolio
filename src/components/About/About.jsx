@@ -51,13 +51,34 @@ const About = () => {
             Spotbug, API REST
           </li>
           <li style={{ "--index": 3 }}>Databases :&nbsp; MySQL, MongoDB</li>
+          <li style={{ "--index": 4 }} className="tools">
+            Tools
+            <div className="tools-list">
+              <ul>
+                <li>
+                  <span>IDE:</span> Visual Studio Code, Visual Studio, Microsoft
+                  Studio Notepad Dbeaver, Eclipse
+                </li>
+                <li>
+                  <span>CI/CD:</span> Github, Gitlab, Docker, Docker Compose
+                </li>
+                <li>
+                  <span>Conception:</span> Maquettage, UML, DevOps, CI/CD,
+                  github, Scrum/Agile, Test fonctionnels
+                </li>
+                <li>
+                  <span>Design:</span> Figma, LucidChart
+                </li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </section>
 
       <section ref={cvRef} className="cv">
         <h3>My resume</h3>
         <div className="cv-content">
-          <p>Discover my background and my skills in detail in my resume : </p>
+          <p>Discover my background and my skills in detail in my resume :</p>
           <div className="cv-actions">
             <a
               href="cv_Yanni_Bouaoud.pdf"
@@ -71,7 +92,7 @@ const About = () => {
               download
               className="cv-button download"
             >
-              ⬇️ Downloadmy resume
+              ⬇️ Download my resume
             </a>
           </div>
         </div>
