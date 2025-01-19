@@ -3,7 +3,10 @@ import "./Home.css";
 
 const Home = () => (
   <header id="home">
-    <p> Full Stack Developer passionate about creating modern solutions.</p>
+    <p>
+      Yanni Bouaoud, Full Stack Developer passionate about creating modern
+      solutions.
+    </p>
     <h1>FULL STACK DEVELOPPER</h1>
     <div className="about">
       <p style={{ fontSize: "20px", marginBottom: "15px" }}>

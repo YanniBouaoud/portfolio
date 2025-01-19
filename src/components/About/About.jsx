@@ -37,9 +37,10 @@ const About = () => {
         <h2>About me</h2>
         <p style={{ fontSize: "19px", marginBottom: "25px" }}>
           Passionate about development, I design and develop applications, with
-          experience in React, Java and SQL. Learning new tech is key for me. As
-          a web dev enthusiast, I'm always adapting to stay on the cutting edge
-          of innovation.
+          experience in React, Java, and SQL. I have obtained a diploma in
+          application design and development at level 6 (Bac+4). Learning new
+          tech is key for me. As a web development enthusiast, I'm always
+          adapting to stay on the cutting edge of innovation.
         </p>
         <ul>
           <li style={{ "--index": 1 }}>

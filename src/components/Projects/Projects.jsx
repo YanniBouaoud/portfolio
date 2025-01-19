@@ -7,14 +7,14 @@ const Projects = () => {
   const projects = [
     {
       title: "Suiss French Group",
-      description: "Application web pour gérer les entités Pokémon.",
+      description: "Web application to manage Pokémon entities.",
       link: "https://github.com/YanniBouaoud",
       imageSrc: "/SFG-iphone1.png", // Image à gauche
       rightImageSrc: "/SFG-iphone2.png", // Image à droite
     },
     {
       title: "NFS Location",
-      description: "Page gestion location de véhicules",
+      description: "Vehicle rental management page",
       link: "https://github.com/YanniBouaoud",
       imageSrc: "/NfsLocation1.png", // Image à gauche
       rightImageSrc: "/NfsLocation2.png", // Image à droite

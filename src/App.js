@@ -40,8 +40,8 @@ function App() {
             <FaLinkedin size={30} style={{ marginLeft: "15px", color: "#ffffff" }} />
           </a>
           <a href="#home">Home</a>
-          <a href="#about">À Propos</a>
-          <a href="#projects">Projets</a>
+          <a href="#about">About me</a>
+          <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
            
         </nav>
