@@ -13,6 +13,13 @@ const Projects = () => {
       rightImageSrc: "/SFG-iphone2.png", // Image à droite
     },
     {
+      title: "liacevoyage.store",
+      description: "Travel eBook sales website.",
+      link: "https://github.com/YanniBouaoud",
+      imageSrc: "/liacevoyage1.png", // Image à gauche
+      rightImageSrc: "/liacevoyage2.png", // Image à droite
+    },
+    {
       title: "NFS Location",
       description: "Vehicle rental management page",
       link: "https://github.com/YanniBouaoud",
